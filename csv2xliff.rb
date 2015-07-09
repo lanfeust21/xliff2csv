@@ -14,7 +14,7 @@ def query2hash(string)
     end
 end
 
-# ruby csv2xliff.rb traductions_grundey_target.csv -T lolita
+# ruby csv2xliff.rb translated_xliff.csv -T TargetFolder
 if $stdin.tty?
   csv_filename= ARGV[0]
   unless csv_filename[-4..-1] == ".csv"

@@ -5,7 +5,7 @@ require 'csv'
 require 'byebug'
 require 'sanitize'
 
-# ruby xliff2csv.rb -F grundey_target
+# ruby xliff2csv.rb -S SourceFolder
 if $stdin.tty?
   if ARGV[0] == '--SourceFolder' || ARGV[0] == '-S'
     folder= ARGV[1]
@@ -35,7 +35,7 @@ class Hash
     end
 end
 
-CSV.open( "traductions_#{csv_filename}.csv","w+",{:col_sep => ";"}) do |csv|
+CSV.open( "translation_#{csv_filename}.csv","w+",{:col_sep => ";"}) do |csv|
     csv << ["Filename","File_params","Trans-unit_params","same","Source","sc","Target","tc"]
     files.each do |file|
         f = File.open(file)
